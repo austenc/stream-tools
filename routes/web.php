@@ -18,5 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/timer', function () {
-    return view('countdown.timer');
-})->name('countdown.timer');
+    return view('countdown.show');
+})->name('countdown.show');
