@@ -14,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('countdown.setup');
 });
+
+Route::get('/timer', function () {
+    return view('countdown.timer');
+})->name('countdown.timer');

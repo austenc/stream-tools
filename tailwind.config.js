@@ -14,5 +14,10 @@ module.exports = {
             ...defaultConfig.theme.colors,
             primary: defaultConfig.theme.colors.teal,
         },
+        extend: {
+            spacing: {
+                px: '1px',
+            },
+        },
     },
 }
