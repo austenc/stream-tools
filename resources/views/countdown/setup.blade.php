@@ -33,6 +33,17 @@
         
 
                     <div class="mt-4">
+                        <label class="block text-sm tracking-wide uppercase text-gray-600">Font Family</label>
+                        <div class="inline-block w-full h-12 rounded-sm px-5 mt-1 bg-gray-600 text-gray-300 text-xl font-mono">
+                            <select name="fontFamily" x-model="fontFamily" class="bg-transparent inline-block w-full h-full" @change="loadFont()">
+                                @foreach ($fonts as $font)
+                                    <option value="{{ $font }}">{{ $font }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
                         <label class="block text-sm tracking-wide uppercase text-gray-600">Timer Ended Text</label>
                         <input type="text" name="endedText" x-model="endedText" class="w-full h-12 px-5 mt-1 text-gray-300 focus:text-gray-200 bg-gray-600 text-xl font-mono focus:bg-gray-500 rounded-sm">
                     </div>

@@ -13,5 +13,5 @@
 
 -   [x] Change "copy URL" button to actually copy to clipboard
 -   [x] Add color config
--   [ ] Add font family config
+-   [x] Add font family config
 -   [ ] Deploy to a live URL!

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('countdown.setup');
+    $fonts = Http::get('https://www.googleapis.com/webfonts/v1/webfonts?key='.Config::get('services.google.key'));
+
+    return view('countdown.setup')->with([
+        'fonts' => collect($fonts->json()['items'])->transform(function ($font) {
+            return $font['family'];
+        }),
+    ]);
 });
 
 Route::get('/timer', function () {

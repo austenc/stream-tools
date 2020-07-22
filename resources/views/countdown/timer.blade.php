@@ -1,21 +1,26 @@
-<div class="font-londrina" x-text="timeRemaining()" :style="getStyles()"></div>
+<div x-text="timeRemaining()" :style="getStyles()"></div>
 
 @push('scripts')
-   <script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
         function timer() {
             return {
                 minutes: {{ request('minutes', 5) }},
                 size: {{ request('size', 96) }},
                 textColor: "{{ request('textColor', '#FFFFFF') }}",
                 endedText: "{{ request('endedText', 'About to start!') }}",
+                fontFamily: "{{ request('fontFamily', 'Londrina Solid') }}",
                 duration: null,
                 countdown: null,
                 copied: false,
                 getStyles() {
                     return 'font-size: ' + this.size + 'px; '
-                        + 'color: ' + this.textColor
+                        + 'color: ' + this.textColor + '; '
+                        + "font-family: '" + this.fontFamily + "'; "
                 },
                 start() {
+                    this.loadFont()
+
                     this.duration = this.minutes * 60 * 1000
 
                     this.countdown = setInterval(() => {
@@ -56,8 +61,13 @@
                             this.copied = false
                         }, 3000);
                     })
+                },
+                loadFont() {
+                    WebFont.load({
+                      google: { families: [this.fontFamily] }
+                    });
                 }
             }
         }
-   </script>
+    </script>
 @endpush
