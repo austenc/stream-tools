@@ -12,6 +12,6 @@
 ## Today
 
 -   [x] Change "copy URL" button to actually copy to clipboard
--   [ ] Add color config
+-   [x] Add color config
 -   [ ] Add font family config
 -   [ ] Deploy to a live URL!
