@@ -18,7 +18,7 @@
                 <div class="w-2/5">
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label class="block text-sm tracking-wide uppercase text-gray-600">Duration in Minutes</label>
+                            <label class="block text-sm tracking-wide uppercase text-gray-600">Minutes</label>
                             <input type="text" name="minutes" x-model="minutes" class="w-full h-12 px-5 mt-1 text-gray-300 focus:text-gray-200 bg-gray-600 text-xl font-mono focus:bg-gray-500 rounded-sm">
                         </div>
                         <div class="flex-1">
