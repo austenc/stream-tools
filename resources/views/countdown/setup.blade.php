@@ -12,27 +12,31 @@
                     
                     <div class="text-sm tracking-wide uppercase text-gray-600 mt-8">Ended Text Preview</div>
                     <div class="p-4 rounded-sm bg-gray-700 mt-1">
-                        <div class="text-white font-londrina" x-text="endedText" :style="fontSize()"></div>
+                        <div class="text-white font-londrina" x-text="endedText" :style="getStyles()"></div>
                     </div>
                 </div>
                 <div class="w-2/5">
                     <div class="flex space-x-4">
-                        <div>
+                        <div class="flex-1">
                             <label class="block text-sm tracking-wide uppercase text-gray-600">Duration in Minutes</label>
                             <input type="text" name="minutes" x-model="minutes" class="w-full h-12 px-5 mt-1 text-gray-300 focus:text-gray-200 bg-gray-600 text-xl font-mono focus:bg-gray-500 rounded-sm">
                         </div>
-            
-                        <div>
+                        <div class="flex-1">
                             <label class="block text-sm tracking-wide uppercase text-gray-600">Text Size in Pixels</label>
                             <input type="text" name="size" x-model="size" class="w-full h-12 px-5 mt-1 text-gray-300 focus:text-gray-200 bg-gray-600 text-xl font-mono focus:bg-gray-500 rounded-sm">
                         </div>
+                        <div class="flex-1">
+                            <label class="block text-sm tracking-wide uppercase text-gray-600">Text Color</label>
+                            <input type="color" name="textColor" x-model="textColor" class="w-full h-12 px-5 mt-1 text-gray-300 focus:text-gray-200 bg-gray-600 text-xl font-mono focus:bg-gray-500 rounded-sm">
+                        </div>
                     </div>
         
+
                     <div class="mt-4">
                         <label class="block text-sm tracking-wide uppercase text-gray-600">Timer Ended Text</label>
                         <input type="text" name="endedText" x-model="endedText" class="w-full h-12 px-5 mt-1 text-gray-300 focus:text-gray-200 bg-gray-600 text-xl font-mono focus:bg-gray-500 rounded-sm">
                     </div>
-        
+
                     <div class="mt-4 text-right">
                         <span x-show="copied" 
                             x-transition:enter="transition ease-out duration-300"

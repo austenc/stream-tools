@@ -1,4 +1,4 @@
-<div class="text-white font-londrina" x-text="timeRemaining()" :style="fontSize()"></div>
+<div class="font-londrina" x-text="timeRemaining()" :style="getStyles()"></div>
 
 @push('scripts')
    <script>
@@ -6,12 +6,14 @@
             return {
                 minutes: {{ request('minutes', 5) }},
                 size: {{ request('size', 96) }},
+                textColor: "{{ request('textColor', '#FFFFFF') }}",
                 endedText: "{{ request('endedText', 'About to start!') }}",
                 duration: null,
                 countdown: null,
                 copied: false,
-                fontSize() {
-                    return 'font-size: ' + this.size + 'px'
+                getStyles() {
+                    return 'font-size: ' + this.size + 'px; '
+                        + 'color: ' + this.textColor
                 },
                 start() {
                     this.duration = this.minutes * 60 * 1000
