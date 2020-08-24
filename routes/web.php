@@ -28,3 +28,5 @@ Route::get('/', function () {
 Route::get('/timer', function () {
     return view('countdown.show');
 })->name('countdown.show');
+
+Route::view('/commands', 'commands');

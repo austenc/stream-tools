@@ -34,4 +34,10 @@ return [
         'key' => env('GOOGLE_API_KEY'),
     ],
 
+    'twitch' => [
+        'username' => env('TWITCH_USERNAME'),
+        'password' => env('TWITCH_PASSWORD'),
+        'channel' => env('TWITCH_CHANNEL'),
+    ],
+
 ];
